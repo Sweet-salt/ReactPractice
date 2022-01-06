@@ -5,69 +5,44 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-            border: 0;
-        }
-        #root p{
-            color: wheat;
-            font-size: 20px;
-            background-color: green;
-            text-align: center;
-            width: 200px;
-        }
-        #btn_plus{
-            background-color: greenyellow;
-            border: 2px solid black;
-            width: 200px;
-        }
-    </style>
+    
 </head>
 <body>
-
-    <div id="root"></div>
-    <!-- <button id="btn_plus">+</button>  -->
+    <div id="root">ddd</div>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
     
     <script type="text/babel">
-        // class ClassComponent extends React.Component{
-        //     render() {
-        //         return <div>hele</div>;
-        //     }
-        // }
-        
-        // ReactDOM.render(
-        //     <ClassComponent />,
-        //     document.querySelector()
-        // )
-
-        //1. 태그 이름 문자열 type
-        // ReactDOM.render(
-        //     React.createElement("h1", null, `type이 문자열 `),
-        //     document.querySelector('#root')
-        // );
-
-        // 2. 리액트 컴포넌트 타입
-        // const Component = () => {
-        //     return React.createElement('p', null, `type is React component`);
-        // };
-        // ReactDOM.render(
-        //     React.createElement(Component),
-        //     document.querySelector('#root')
-        // );
-
-        // 3. React.Fragment
-        ReactDOM.render(
-            React.createElement(
-                React.Fragment,
-                null,
-                `type is React Fragment`
-            ),
-            document.querySelector('#root')
-        );
+        class Component extends React.Component {
+            state = {
+                count: 0,
+            };
+            // constructor(props) {
+            //     super(props);
+            //     this.click = this.click.bind(this);
+            // }
+            render() {
+                return (
+                    <div>
+                        <p>{this.state.count}</p>
+                        <button
+                            onMouseEnter={ this.click }
+                        >
+                            click
+                        </button>
+                    </div>
+                );
+            }
+            click = () => {
+                console.log('clicked');
+                this.setState( state => ({
+                    ...state,
+                    count: state.count + 1,
+                }));
+            }
+        }
+    
     </script>
-   <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
-   <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+  
 </body>
 </html>
