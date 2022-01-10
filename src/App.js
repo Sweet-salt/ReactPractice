@@ -1,8 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import ContorlledComponent from './components/ControlledComponent';
+import UncontrolledComponent from './components/UncontrolledComponent';
+
+import Example from './components/example'
+import Example1 from './components/example1';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,7 +15,8 @@ function App() {
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <ContorlledComponent />
+        <Example />
+        <Example1 />
       </header>
     </div>
   );

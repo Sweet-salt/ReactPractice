@@ -64,3 +64,29 @@ import React from 'react';
 
 ### componentDidUpdate
 - 컴포넌트가 재 랜더링을 마치면 불림.
+
+
+### useState
+- state를 대체할 수 있다.
+
+### useEffect
+- 라이프 사이클 훅을 대체할 수 있다
+    - componentDidMount
+    - componentDidUpdate
+    - componentWillUnmount
+- defendency와 lifecycle은 다른거기 때문에 100%일치하는 개념이 아니다. 
+- render와 defendency리스트와 밀첩한 관계가 있다
+
+## 배포
+- npm install serve -g
+- serve -s folderName
+
+## Server side Rendering
+- 서버에서 응답을 가져올 때, 기존 처럼 스태틱 파일만 가져오는 것이 아니고 서버에서 응답값을 만들어 내려주고, 그 후에 스태틱 파일을 내려줌.
+- 스태틱 파일을 다 내려받고, 리액트 앱을 브라우저에서 실행한 뒤에는 SPA처럼 동작
+
+## React Server Side Rendring
+- React Component를 브라우저가 아니라 Node.js에서 사용
+- 라우팅 리덕스 같은 처리를 서버에서 진행하고 내려준다.
+    - 어려움
+- JSX가 포함된 리액트 코드를 서버에서 읽을 수 있도록 bable 설정해야함.
